@@ -3,10 +3,14 @@
     "$fresh/": "https://deno.land/x/fresh@1.0.2/",
     "preact": "https://esm.sh/preact@10.10.0",
     "preact/": "https://esm.sh/preact@10.10.0/",
+    "preactRouter": "https://npmcdn.com/preact-router@4.1.0/dist/preact-router.umd.js",
     "preact-render-to-string": "https://esm.sh/preact-render-to-string@5.2.1?external=preact",
     "@twind": "./utils/twind.ts",
+    "@react": "./utils/preact.ts",
     "twind": "https://esm.sh/twind@0.16.17",
     "twind/": "https://esm.sh/twind@0.16.17/",
-    "react/preact": "https://esm.sh/@headlessui/react@1.6.6?alias=react:preact/compat,react-dom:preact/compat,@types/react:preact/compat&deps=preact@10.10.0"
+    "react/preact": "https://esm.sh/@headlessui/react@1.6.6?alias=react:preact/compat,react-dom:preact/compat,@types/react:preact/compat&deps=preact@10.10.0",
+    "router": "https://esm.sh/react-router-dom@5.2.0"
+
   }
 }
