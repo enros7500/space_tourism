@@ -4,6 +4,7 @@ import * as React from 'preact';
 import { h } from "preact";
 import { Menu, Transition } from 'react/preact';
 import { tw } from "@twind";
+import { asset } from "https://deno.land/x/fresh@1.0.2/runtime.ts";
 
 //import { ReactRouterDom } from "../utils/deps-client.ts";
 //const { Link } = ReactRouterDom;
@@ -18,14 +19,14 @@ export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <nav class={tw`w-full bg-blue-500 shadow blur-sm`}>
-            <div class={tw`justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8`}>
+    <nav class={tw`sticky h-0 inset-y-20`}>
+            <div class={tw`justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8 backdrop-filter backdrop-blur-xl bg-opacity-30`}>
                 <div>
                     <div class={tw`flex items-center justify-between py-3 md:py-5 md:block`}>
                         <a href="javascript:void(0)">
                             <h2 class={tw`text-2xl font-bold text-white`}>
                             <img
-                              src="../logo.svg"
+                              src={asset('img/shared/logo.svg')}
                               height="80px"
                               alt="the fresh logo: a sliced lemon dripping with juice" />
                             </h2>
@@ -68,7 +69,7 @@ export default function Navbar() {
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class={tw`bg-white bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-30`}>
                     <div
                         class={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
                             navbar ? "block" : "hidden"
@@ -99,9 +100,10 @@ export default function Navbar() {
                         </ul>
                         */}
 
+            {/*
                         <div class={tw`mt-3 space-y-2 lg:hidden md:inline-block`}>
                             
-                            {/*
+                            
                     <a
                         href="javascript:void(0)"
                         class={tw`inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800`}
@@ -114,9 +116,10 @@ export default function Navbar() {
                     >
                         Sign up
                     </a>
+                    </div>
                     */}
                     
-                </div>
+                
                     </div>
                 </div>
                 <div class={tw`hidden space-x-2 md:inline-block`}>
