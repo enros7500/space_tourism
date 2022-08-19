@@ -4,19 +4,11 @@ import * as React from 'preact';
 import { h } from "preact";
 import { Menu, Transition } from 'react/preact';
 import { tw } from "@twind";
-import {
-    BrowserRouter as Router,
-    Link,
-    Route,
-    Switch,
-  } from "router";
 
-const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
-]
+//import { ReactRouterDom } from "../utils/deps-client.ts";
+//const { Link } = ReactRouterDom;
+//import Router from 'preact-router';
+
 
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join('')
@@ -26,7 +18,7 @@ export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <nav class={tw`w-full bg-purple-500 shadow`}>
+    <nav class={tw`w-full bg-blue-500 shadow blur-sm`}>
             <div class={tw`justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8`}>
                 <div>
                     <div class={tw`flex items-center justify-between py-3 md:py-5 md:block`}>
@@ -82,26 +74,34 @@ export default function Navbar() {
                             navbar ? "block" : "hidden"
                         }`}
                     >
+                        {/*
                         <ul class={tw`items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0`}>
                             <li class={tw`text-white hover:text-indigo-200`}>
-                                {/* <Link to="/fe">Home</Link> */}
-                                <a href="/">Home</a>
+                                <a href="/">
+                                    <strong>00</strong> Home
+                                </a>
                             </li>
                             <li class={tw`text-white hover:text-indigo-200`}>
-                                {/* <Link to="/crew">Crew</Link> */}
-                                <a href="/crew">Crew</a>
+                                <a href="/dest">
+                                    <strong>01</strong> Destination
+                                </a>
                             </li>
                             <li class={tw`text-white hover:text-indigo-200`}>
-                                {/* <Link to="/dest">Destination</Link> */}
-                                <a href="/dest">Destination</a>
+                                <a href="/crew">
+                                <strong>02</strong> Crew
+                                </a>
                             </li>
                             <li class={tw`text-white hover:text-indigo-200`}>
-                                {/* <Link to="/tech">Technology</Link> */}
-                                <a href="/tech">Technology</a>
+                                <a href="/tech">
+                                <strong>03</strong> Technology
+                                </a>
                             </li>
                         </ul>
+                        */}
 
                         <div class={tw`mt-3 space-y-2 lg:hidden md:inline-block`}>
+                            
+                            {/*
                     <a
                         href="javascript:void(0)"
                         class={tw`inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800`}
@@ -114,10 +114,36 @@ export default function Navbar() {
                     >
                         Sign up
                     </a>
+                    */}
+                    
                 </div>
                     </div>
                 </div>
                 <div class={tw`hidden space-x-2 md:inline-block`}>
+                   
+                <ul class={tw`items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0`}>
+                            <li class={tw`text-white hover:text-indigo-200`}>
+                                <a href="/">
+                                    <strong>00</strong> Home
+                                </a>
+                            </li>
+                            <li class={tw`text-white hover:text-indigo-200`}>
+                                <a href="/dest">
+                                    <strong>01</strong> Destination
+                                </a>
+                            </li>
+                            <li class={tw`text-white hover:text-indigo-200`}>
+                                <a href="/crew">
+                                <strong>02</strong> Crew
+                                </a>
+                            </li>
+                            <li class={tw`text-white hover:text-indigo-200`}>
+                                <a href="/tech">
+                                <strong>03</strong> Technology
+                                </a>
+                            </li>
+                        </ul>
+                   {/*
                     <a
                         href="javascript:void(0)"
                         class={tw`px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800`}
@@ -130,6 +156,7 @@ export default function Navbar() {
                     >
                         Sign up
                     </a>
+                */}
                 </div>
             </div>
         </nav>
